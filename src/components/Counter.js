@@ -7,7 +7,9 @@ class Counter extends Component {
   };
 
   handleIncrement = () => {
-    console.log('Клікнули на збільшити');
+    this.setState({
+      value: 10,
+    });
   };
 
   handleDecrement = () => {
