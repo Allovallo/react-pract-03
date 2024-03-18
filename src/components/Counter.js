@@ -2,18 +2,28 @@ import './Counter.css';
 import { React, Component } from 'react';
 
 class Counter extends Component {
+  static defaultProps = {
+    initialValue: 0,
+  };
+
+  static propTypes = {
+    // описуємо пропТайпи
+  };
+
   state = {
-    value: 0,
+    value: this.props.initialValue,
   };
 
   handleIncrement = () => {
-    this.setState({
-      value: 10,
-    });
+    this.setState(prevState => ({
+      value: prevState.value + 1,
+    }));
   };
 
   handleDecrement = () => {
-    console.log('Клікнули на зменшити');
+    this.setState(prevState => ({
+      value: prevState.value - 1,
+    }));
   };
 
   render() {

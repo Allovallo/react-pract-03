@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div>
       <h1>Стан компонента</h1>
-      <Counter></Counter>
+      <Counter initialValue={10} />
     </div>
   );
 };
