@@ -1,5 +1,6 @@
-import './Counter.css';
 import { React, Component } from 'react';
+import Controls from './Controls';
+import './Counter.css';
 
 class Counter extends Component {
   static defaultProps = {
@@ -31,14 +32,16 @@ class Counter extends Component {
       <div className="Counter">
         <span className="Counter__value">{this.state.value}</span>
 
-        <div className="Counter__controls">
+        <Controls onIncrement={this.handleIncrement} onDecrement={this.handleDecrement} />
+
+        {/* <div className="Counter__controls">
           <button type="button" onClick={this.handleIncrement}>
             Збільшити на 1
           </button>
           <button type="button" onClick={this.handleDecrement}>
             Зменшити на 1
           </button>
-        </div>
+        </div> */}
       </div>
     );
   }
