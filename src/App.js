@@ -1,4 +1,5 @@
 import Counter from './components/Counter/Counter';
+import Dropdown from 'components/Dropdown/Dropdown';
 
 // const colorPickerOptions = [
 //   { label: 'red', color: '#F44336' },
@@ -13,7 +14,8 @@ const App = () => {
   return (
     <div>
       <h1>Стан компонента</h1>
-      <Counter initialValue={10} />
+      {/* <Counter initialValue={10} /> */}
+      <Dropdown />
     </div>
   );
 };
