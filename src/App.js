@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div>
       <h1>Стан компонента</h1>
-      {/* <Counter initialValue={10} /> */}
+      <Counter initialValue={10} />
       <Dropdown />
     </div>
   );

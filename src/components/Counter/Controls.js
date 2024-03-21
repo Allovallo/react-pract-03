@@ -1,4 +1,4 @@
-const Controls = ({ onIncrement, onDecrement }) => {
+export const Controls = ({ onIncrement, onDecrement }) => {
   <div className="Counter__controls">
     <button type="button" onClick={onIncrement}>
       Збільшити на 1
