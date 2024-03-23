@@ -19,15 +19,35 @@ class App extends Component {
   state = {
     todos: initialTodos,
   };
+
+  deleteTodo = todoId => {
+    this.setState(prevState => ({ todos: prevState.todos.filter(todo => todo.id !== todoId) }));
+  };
+
   render() {
     const { todos } = this.state;
+
+    const totalTodoCount = todos.length;
+    const completedTodosCount = todos.reduce(
+      (total, todo) => (todo.completed ? total + 1 : total),
+      0
+    );
+
+    console.log(completedTodosCount);
+
     return (
       <div>
         <h1>Стан компонента</h1>
         {/* <Counter initialValue={10} />
           <Dropdown /> */}
         {/* <ColorPicker options={colorPickerOptions} /> */}
-        <TodoList todos={todos} />
+
+        <div>
+          <p>Загальна кількість todo`шек: {totalTodoCount}</p>
+          <p>Кількість виконаних todo`шек: {completedTodosCount}</p>
+        </div>
+
+        <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
       </div>
     );
   }
