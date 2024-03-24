@@ -17,37 +17,50 @@ import initialTodos from './todos.json';
 
 class App extends Component {
   state = {
-    todos: initialTodos,
+    // todos: initialTodos,
+    name: '',
   };
 
-  deleteTodo = todoId => {
-    this.setState(prevState => ({ todos: prevState.todos.filter(todo => todo.id !== todoId) }));
+  // deleteTodo = todoId => {
+  //   this.setState(prevState => ({ todos: prevState.todos.filter(todo => todo.id !== todoId) }));
+  // };
+
+  handleInputChange = event => {
+    // console.log(event.currentTarget.value);
+    this.setState({ inputValue: event.currentTarget.value });
   };
 
   render() {
-    const { todos } = this.state;
+    // const { todos } = this.state;
 
-    const totalTodoCount = todos.length;
-    const completedTodosCount = todos.reduce(
-      (total, todo) => (todo.completed ? total + 1 : total),
-      0
-    );
-
-    console.log(completedTodosCount);
+    // const totalTodoCount = todos.length;
+    // const completedTodosCount = todos.reduce(
+    //   (total, todo) => (todo.completed ? total + 1 : total),
+    //   0
+    // );
 
     return (
       <div>
+        {/* <input type="text" value={this.state.inputValue} onChange={this.handleInputChange}></input> */}
+
+        <form>
+          <label>
+            Ім'я
+            <input type="text" value={this.state.name}></input>
+          </label>
+        </form>
+
         <h1>Стан компонента</h1>
         {/* <Counter initialValue={10} />
           <Dropdown /> */}
         {/* <ColorPicker options={colorPickerOptions} /> */}
 
-        <div>
+        {/* <div>
           <p>Загальна кількість todo`шек: {totalTodoCount}</p>
           <p>Кількість виконаних todo`шек: {completedTodosCount}</p>
-        </div>
+        </div> */}
 
-        <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
+        {/* <TodoList todos={todos} onDeleteTodo={this.deleteTodo} /> */}
       </div>
     );
   }
