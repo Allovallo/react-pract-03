@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-
 // import ColorPicker from 'components/ColorPicker';
 // import Counter from './components/Counter';
 // import Dropdown from 'components/Dropdown';
 import TodoList from 'components/TodoList';
 import initialTodos from './todos.json';
+import Form from 'components/Form';
 
 // const colorPickerOptions = [
 //   { label: 'red', color: '#F44336' },
@@ -18,8 +18,6 @@ import initialTodos from './todos.json';
 class App extends Component {
   state = {
     // todos: initialTodos,
-    name: '',
-    tag: '',
   };
 
   // deleteTodo = todoId => {
@@ -27,8 +25,15 @@ class App extends Component {
   // };
 
   handleNameChange = event => {
-    // console.log(event.currentTarget.value);
-    this.setState({ inputValue: event.currentTarget.value });
+    this.setState({ name: event.currentTarget.value });
+  };
+
+  handleTagChange = event => {
+    this.setState({ tag: event.currentTarget.value });
+  };
+
+  formSubmitHandler = data => {
+    console.log(data);
   };
 
   render() {
@@ -44,17 +49,7 @@ class App extends Component {
       <div>
         {/* <input type="text" value={this.state.inputValue} onChange={this.handleInputChange}></input> */}
 
-        <form>
-          <label>
-            Ім'я
-            <input type="text" name={this.state.name} onChange={this.handleNameChange} />
-          </label>
-
-          <label>
-            Нікнейм
-            <input type="text" value={this.state.tag} />
-          </label>
-        </form>
+        <Form onSubmit={this.formSubmitHandler} />
 
         <h1>Стан компонента</h1>
         {/* <Counter initialValue={10} />
