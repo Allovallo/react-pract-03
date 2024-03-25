@@ -19,13 +19,14 @@ class App extends Component {
   state = {
     // todos: initialTodos,
     name: '',
+    tag: '',
   };
 
   // deleteTodo = todoId => {
   //   this.setState(prevState => ({ todos: prevState.todos.filter(todo => todo.id !== todoId) }));
   // };
 
-  handleInputChange = event => {
+  handleNameChange = event => {
     // console.log(event.currentTarget.value);
     this.setState({ inputValue: event.currentTarget.value });
   };
@@ -46,7 +47,12 @@ class App extends Component {
         <form>
           <label>
             Ім'я
-            <input type="text" value={this.state.name}></input>
+            <input type="text" name={this.state.name} onChange={this.handleNameChange} />
+          </label>
+
+          <label>
+            Нікнейм
+            <input type="text" value={this.state.tag} />
           </label>
         </form>
 
