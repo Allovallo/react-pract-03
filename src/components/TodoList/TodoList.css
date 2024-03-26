@@ -15,3 +15,16 @@
     margin-bottom: 0;
     margin-right: 10px;
 }
+
+.TodoList__item--completed {
+    text-decoration: line-through;
+}
+
+.TodoList__button {
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+.TodoList__checkbox {}
